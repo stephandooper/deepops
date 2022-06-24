@@ -3,7 +3,7 @@
 ################################################################################
 # Slurm job scheduler configuration
 # Playbook: slurm, slurm-cluster, slurm-perf, slurm-perf-cluster, slurm-validation
-slurm_version: 21.08.5
+slurm_version: "21.08.8-2"
 slurm_install_prefix: /usr/local
 pmix_install_prefix: /opt/deepops/pmix
 hwloc_install_prefix: /opt/deepops/hwloc
@@ -90,6 +90,9 @@ slurm_enable_nfs_client_nodes: true
 # Inventory host groups to use for NFS server or clients
 nfs_server_group: "slurm-master[0]"
 nfs_client_group: "slurm-master[1:],slurm-node"
+
+# Flags for sharing slurm.conf among compute and control nodes
+slurm_conf_symlink: false
 
 ################################################################################
 # SOFTWARE MODULES (SM)                                                        #
